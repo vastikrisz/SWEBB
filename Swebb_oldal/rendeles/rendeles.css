@@ -1,0 +1,375 @@
+                                                                /* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+/* Navbar Styles */
+#menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: whitesmoke;
+    padding: 10px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        width: 100%;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.5s ease, max-height 0.5s ease;
+    }
+    .navbar ul li {
+        display: block;
+        margin: 10px 0;
+        padding: 10px 0;
+    }
+    #menu-toggle:checked + .menu-icon + ul {
+        display: flex;
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar ul {
+        display: flex !important;
+        flex-direction: row;
+        opacity: 1 !important;
+        max-height: none !important;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        max-height: 500px;
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+#menu-toggle:checked + .menu-icon + ul {
+    animation: slideDown 0.5s forwards;
+}
+
+#menu-toggle:not(:checked) + .menu-icon + ul {
+    animation: slideUp 0.5s forwards;
+}
+                                                                /*Order styles*/
+/* Pricing Table Section */
+.pricing-table {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #527191;
+}
+
+.pricing-table h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: whitesmoke;
+}
+
+.pricing-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: whitesmoke;
+    padding: 20px;
+    border: 1px solid black;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #527191;
+}
+
+.pricing-card h2{
+    color: black;
+}
+
+.pricing-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.pricing-card h4 {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #527191;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-card ul li {
+    margin: 10px 0;
+    color: black;
+}
+
+.pricing-card ul li.strikethrough {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.pricing-card button {
+    background-color: #527191;
+    color: #F4F6F6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.pricing-card button:hover {
+    background-color: lightslategray;
+    color: black;
+}
+
+.pricing-card.highlight {
+    border: 3px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card.custom {
+    background-color: darkgrey;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: whitesmoke;
+}
+
+@media (max-width: 768px) {
+    .pricing-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pricing-card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .pricing-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when hovering over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info-icon {
+    margin-left: 5px;
+    font-size: 1.0em;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #555;
+    background-color: lightgray;
+    border-radius: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.tooltip:hover .info-icon {
+    color: #000;
+}
+                                                                /*Info*/
+#info-section, #form-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#info-section h2, #form-section h2 {
+    margin-bottom: 20px;
+}
+
+#info-section p {
+    margin-bottom: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    iframe {
+        width: 100%;
+        height: 600px;
+    }
+
+    #info-section p, #form-section p {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    iframe {
+        width: 100%;
+        height: 500px;
+    }
+
+    #info-section p, #form-section p {
+        padding: 0 5px;
+    }
+}
+                                                                /*Footer*/
+footer {
+    background: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
