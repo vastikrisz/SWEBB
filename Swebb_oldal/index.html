@@ -8,6 +8,18 @@
     <meta name="author" content="Swebblap">
     <title>SWEBBLAP</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- OwlCarousel2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- OwlCarousel2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <!-- Lightbox2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -74,75 +86,32 @@
 
     <section id="portfolio" class="portfolio-slideshow">
         <h2>Néhány weboldal példa</h2>
-        <!-- Desktop Slideshow -->
-        <div class="desktop-slideshow">
-            <input type="radio" name="d-slide" id="d-slide1" checked>
-            <input type="radio" name="d-slide" id="d-slide2">
-            <input type="radio" name="d-slide" id="d-slide3">
-            <div class="slides">
-                <div class="slide" id="d-s1">
-                    <img src="pictures/stock.jpg" alt="Example Website 1">
-                    <div class="slide-description">
-                        <h3>Example Website 1</h3>
-                        <p>Description for Example Website 1.</p>
-                    </div>
-                </div>
-                <div class="slide" id="d-s2">
-                    <img src="pictures/stock.jpg" alt="Example Website 2">
-                    <div class="slide-description">
-                        <h3>Example Website 2</h3>
-                        <p>Description for Example Website 2.</p>
-                    </div>
-                </div>
-                <div class="slide" id="d-s3">
-                    <img src="pictures/stock.jpg" alt="Example Website 3">
-                    <div class="slide-description">
-                        <h3>Example Website 3</h3>
-                        <p>Description for Example Website 3.</p>
-                    </div>
-                </div>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <a href="pictures/macaronpage.png" data-lightbox="portfolio" data-title="Macaron bolt">
+                    <img src="pictures/macaronpage.png" alt="Macaron bolt">
+                    <div class="zoom-icon">&#128269;</div> <!-- Zoom icon -->
+                </a>
             </div>
-            <div class="navigation">
-                <label for="d-slide1" class="nav-button"></label>
-                <label for="d-slide2" class="nav-button"></label>
-                <label for="d-slide3" class="nav-button"></label>
+            <div class="item">
+                <a href="pictures/barberpage.png" data-lightbox="portfolio" data-title="Férfi fodrászat">
+                    <img src="pictures/barberpage.png" alt="Férfi fodrászat">
+                    <div class="zoom-icon">&#128269;</div> <!-- Zoom icon -->
+                </a>
+            </div>
+            <div class="item">
+                <a href="pictures/gamedevpage.png" data-lightbox="portfolio" data-title="Játékfejlesztő stúdió">
+                    <img src="pictures/gamedevpage.png" alt="Játékfejlesztő stúdió">
+                    <div class="zoom-icon">&#128269;</div> <!-- Zoom icon -->
+                </a>
             </div>
         </div>
-        <!-- Mobile Slideshow -->
-        <div class="mobile-slideshow">
-            <input type="radio" name="m-slide" id="m-slide1" checked>
-            <input type="radio" name="m-slide" id="m-slide2">
-            <input type="radio" name="m-slide" id="m-slide3">
-            <div class="slides">
-                <div class="slide" id="m-s1">
-                    <img src="path/to/example-website1.jpg" alt="Example Website 1">
-                    <div class="slide-description">
-                        <h3>Example Website 1</h3>
-                        <p>Description for Example Website 1.</p>
-                    </div>
-                </div>
-                <div class="slide" id="m-s2">
-                    <img src="path/to/example-website2.jpg" alt="Example Website 2">
-                    <div class="slide-description">
-                        <h3>Example Website 2</h3>
-                        <p>Description for Example Website 2.</p>
-                    </div>
-                </div>
-                <div class="slide" id="m-s3">
-                    <img src="path/to/example-website3.jpg" alt="Example Website 3">
-                    <div class="slide-description">
-                        <h3>Example Website 3</h3>
-                        <p>Description for Example Website 3.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="navigation">
-                <label for="m-slide1" class="nav-button"></label>
-                <label for="m-slide2" class="nav-button"></label>
-                <label for="m-slide3" class="nav-button"></label>
-            </div>
-        </div>
-    </section>        
+    </section>
+
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close">&times;</span>
+        <img class="lightbox-content">
+    </div>
     
     <section id="pricing" class="pricing-table">
         <h2>Árlista</h2>
@@ -269,5 +238,49 @@
             E-mail: <a href="mailto:swebblap1@gmail.com">swebblap1@gmail.com</a>
         </p>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+          $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false, // Disable navigation buttons
+            dots: true, // Enable pagination dots
+            responsive: {
+              0: {
+                items: 1
+              },
+              600: {
+                items: 1
+              },
+              1000: {
+                items: 1
+              }
+            }
+          });
+        });
+        </script>
+    
+    <script>
+        window.addEventListener('orientationchange', function() {
+    const modalImg = document.querySelector('.lightbox-content');
+    const isModalOpen = document.getElementById('lightbox-modal').style.display === 'flex';
+    if (isModalOpen) {
+        if (window.orientation === 90 || window.orientation === -90) {
+            // Landscape
+            modalImg.style.transform = 'rotate(0deg)';
+            modalImg.style.width = '100%';
+            modalImg.style.height = 'auto';
+        } else {
+            // Portrait
+            modalImg.style.transform = 'rotate(90deg)';
+            modalImg.style.width = 'auto';
+            modalImg.style.height = '100%';
+        }
+    }
+});
+
+    </script>
+        
 </body>
 </html>
