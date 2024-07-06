@@ -31,7 +31,7 @@ h3 {
     font-size: 1.5em;
 }
 
-/* Navbar Styles */
+                                                                        /* Navbar Styles */
 #menu-toggle {
     display: none;
 }
@@ -39,7 +39,7 @@ h3 {
     display: none;
     font-size: 30px;
     cursor: pointer;
-    color: whitesmoke;
+    color: white;
     padding: 10px;
 }
 .navbar {
@@ -47,7 +47,7 @@ h3 {
     top: 0;
     width: 100%;
     background: black;
-    color: whitesmoke;
+    color: white;
     text-align: center;
     padding: 10px 0;
     z-index: 1000;
@@ -67,7 +67,7 @@ h3 {
 }
 
 .navbar ul li a {
-    color: whitesmoke;
+    color: white;
     text-decoration: none;
     padding: 10px;
     transition: background 0.3s ease;
@@ -146,7 +146,7 @@ h3 {
     padding-top: 60px;
 }
 
-/* Header Section */
+                                                                /* Header Section */
 .hero-header {
     position: relative;
     width: 100%;
@@ -172,6 +172,9 @@ h3 {
     object-fit: cover;
 }
 
+#swebblogo{
+    width: 85%;
+}
 .overlay {
     position: absolute;
     top: 0;
@@ -216,8 +219,8 @@ h3 {
 }
 
 .header-content button {
-    background-color: #527191;
-    color: whitesmoke;
+    background-color: #8572AA;
+    color: black;
     border: none;
     padding: 15px 30px;
     font-size: 1em;
@@ -235,8 +238,8 @@ h3 {
 }
 
 .header-content button:hover {
-    background-color: lightslategray;
-    color: black;
+    background-color: #211A68;
+    color: white;
 }
 
 /* Responsive Header */
@@ -278,10 +281,10 @@ h3 {
     }
 }
 
-/* Services Section */
+                                                            /* Services Section */
 .services {
     padding: 20px 20px;
-    background-color: #527191;
+    background-color: #211A68;
     text-align: center;
 }
 
@@ -298,7 +301,7 @@ h3 {
 }
 
 .service-card {
-    background: whitesmoke;
+    background: lavenderblush;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -337,11 +340,11 @@ h3 {
     }
 }
 
-/* Pricing Table Section */
+                                                        /* Pricing Table Section */
 .pricing-table {
     text-align: center;
     padding: 20px 20px;
-    background-color: #527191;
+    background-color: #211A68;
 }
 
 .pricing-table h2 {
@@ -358,7 +361,7 @@ h3 {
 }
 
 .pricing-card {
-    background: whitesmoke;
+    background: lavenderblush;
     padding: 20px;
     border: 1px solid black;
     width: 250px;
@@ -412,7 +415,7 @@ h3 {
 }
 
 .pricing-card button {
-    background-color: #527191;
+    background-color: #8572AA;
     color: #F4F6F6;
     border: none;
     padding: 10px 20px;
@@ -422,12 +425,12 @@ h3 {
 }
 
 .pricing-card button:hover {
-    background-color: lightslategray;
-    color: black;
+    background-color: #1A1463;
+    color: white;
 }
 
 .pricing-card.custom {
-    background-color: darkgrey;
+    background-color: white;
     border: 1px solid black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: whitesmoke;
@@ -559,10 +562,10 @@ h3 {
 .tooltip:hover .info-icon {
     color: #000;
 }
-                                            /* General slideshow styles */
+                                                        /* General slideshow styles */
 .portfolio-slideshow {
     padding: 20px 20px;
-    background-color: #496582;
+    background-color: #8572AA;
     text-align: center;
     overflow: hidden;
 }
@@ -695,7 +698,7 @@ h3 {
                                                                 /* Contact section */
 .contact-section {
     padding: 20px 20px;
-    background-color: #496582;
+    background-color: #8572AA;
     text-align: center;
 }
 
@@ -715,7 +718,7 @@ h3 {
 }
 
 .contact-details a {
-    color: black;
+    color: #1a1463;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -729,7 +732,7 @@ h3 {
 .developers {
     text-align: center;
     padding: 20px 20px;
-    background-color: #527191;
+    background-color: #211A68;
     color: whitesmoke;
 }
 
@@ -749,7 +752,7 @@ h3 {
 .developer-card {
     position: relative;
     width: 400px;
-    background: whitesmoke;
+    background: lavenderblush;
     border: 2px solid black;
     border-radius: 10px;
     overflow: hidden;
@@ -787,7 +790,7 @@ h3 {
 }
 
 .developer-intro-box {
-    background: whitesmoke;
+    background: lavenderblush;
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -826,7 +829,7 @@ h3 {
                                                                 /* Footer Styles */
 footer {
     background: black;
-    color: whitesmoke;
+    color: white;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -838,12 +841,12 @@ footer p {
 }
 
 footer a {
-    color: #0056b3;
+    color: #8572AA;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #496582;
+    color: #DFD9E8;
     text-decoration: underline;
 }
