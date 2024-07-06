@@ -317,6 +317,7 @@ h4 {
 #info-section, #form-section {
     padding: 60px 20px;
     text-align: center;
+    background-image: url("image.png");
 }
 
 #info-section h2, #form-section h2 {
