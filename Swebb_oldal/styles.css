@@ -31,6 +31,23 @@ h3 {
     font-size: 1.5em;
 }
 
+.gradient-transition-dark {
+    background: linear-gradient(to bottom, #211A68, #8572AA); /* Gradient from dark to light */
+    height: 80px; /* Adjust height as needed */
+}
+.gradient-transition-light {
+    background: linear-gradient(to bottom, #8572AA, #211A68); /* Gradient from dark to light */
+    height: 80px; /* Adjust height as needed */
+}
+.gradient-transition-footer {
+    background: linear-gradient(to bottom, #211A68, #000); /* Gradient from dark to light */
+    height: 80px; /* Adjust height as needed */
+}
+.gradient-transition-header {
+    background: linear-gradient(to bottom, #000, #8572AA); /* Gradient from dark to light */
+    height: 80px; /* Adjust height as needed */
+}
+
                                                                         /* Navbar Styles */
 #menu-toggle {
     display: none;
@@ -282,7 +299,12 @@ h3 {
 }
 
                                                             /* Services Section */
-.services {
+#services {
+    padding: 20px 20px;
+    background-color: #8572AA;
+    text-align: center;
+}
+#guarantee{
     padding: 20px 20px;
     background-color: #211A68;
     text-align: center;
