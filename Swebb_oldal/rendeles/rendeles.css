@@ -139,24 +139,104 @@ h4 {
 #menu-toggle:not(:checked) + .menu-icon + ul {
     animation: slideUp 0.5s forwards;
 }
-                                                                /*Order styles*/
-/* Pricing Table Section */
+                                                            /*Steps section*/
+.steps-section {
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.steps-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.steps-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.step-card {
+    background: white;
+    color: black;
+    padding: 20px;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    width: calc(20% - 40px);
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.step-card h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #8572AA;
+    display: inline-block;
+}
+
+.step-card p {
+    font-size: 1em;
+}
+
+.step-number {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #8572AA;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+/* Media query for small screens (e.g., tablets) */
+@media (max-width: 768px) {
+    .step-card {
+        width: calc(45% - 40px);
+    }
+}
+
+/* Media query for very small screens (e.g., phones) */
+@media (max-width: 480px) {
+    .step-card {
+        width: calc(90% - 40px);
+    }
+}
+                                                            /* Pricing Table Section */
 .pricing-table {
     text-align: center;
-    padding: 60px 20px;
+    padding: 20px 20px;
     background-color: #527191;
 }
 
 .pricing-table h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
+    font-size: 2em;
+    margin-bottom: 30px;
     color: whitesmoke;
 }
 
 .pricing-options {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -164,7 +244,7 @@ h4 {
     background: whitesmoke;
     padding: 20px;
     border: 1px solid black;
-    width: 250px;
+    width: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-bottom: 20px;
@@ -202,21 +282,6 @@ h4 {
     color: #aaa;
 }
 
-.pricing-card button {
-    background-color: #527191;
-    color: #F4F6F6;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.pricing-card button:hover {
-    background-color: lightslategray;
-    color: black;
-}
-
 .pricing-card.highlight {
     border: 3px solid black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -243,7 +308,7 @@ h4 {
 
 @media (max-width: 480px) {
     .pricing-card {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -313,43 +378,34 @@ h4 {
 .tooltip:hover .info-icon {
     color: #000;
 }
-                                                                /*Info*/
-#info-section, #form-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-image: url("image.png");
+
+#form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-#info-section h2, #form-section h2 {
+.form-container {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.form-container h2 {
     margin-bottom: 20px;
 }
 
-#info-section p {
-    margin-bottom: 40px;
+iframe {
+    border: none;
+    width: 100%;
+     
+    height: 800px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    iframe {
-        width: 100%;
-        height: 600px;
-    }
-
-    #info-section p, #form-section p {
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    iframe {
-        width: 100%;
-        height: 500px;
-    }
-
-    #info-section p, #form-section p {
-        padding: 0 5px;
-    }
-}
                                                                 /*Footer*/
 footer {
     background: black;
