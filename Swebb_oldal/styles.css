@@ -917,3 +917,47 @@ footer a:hover {
     color: #DFD9E8;
     text-decoration: underline;
 }
+                                                                    /*cookies*/
+#cookieConsent {
+    background-color: rgba(20, 20, 20, 0.8);
+    min-height: 26px;
+    font-size: 14px;
+    color: white;
+    line-height: 26px;
+    padding: 8px 0 8px 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+
+#cookieConsent a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+#cookieConsent a:hover {
+    text-decoration: underline;
+}
+
+#closeCookieConsent {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: 10px 10px;
+    font-weight: bold;
+    font-size: 300%;
+}
+
+#acceptCookie {
+    background-color: #ffc107;
+    color: black;
+    border: 0;
+    padding: 10px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
