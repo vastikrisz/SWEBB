@@ -90,6 +90,14 @@ h3 {
     transition: background 0.3s ease;
 }
 
+#navorder{
+    color: black;
+    font-weight: bold;
+    background-color: whitesmoke;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
 .navbar ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
@@ -722,6 +730,15 @@ h3 {
     padding: 20px 20px;
     background-color: #8572AA;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contact-section h2 {
@@ -729,9 +746,26 @@ h3 {
     margin-bottom: 20px;
 }
 
+.contact-card {
+    background: lavenderblush;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .contact-section p {
     font-size: 1.2em;
     margin-bottom: 20px;
+    color: #000;
 }
 
 .contact-details p {
@@ -740,16 +774,27 @@ h3 {
 }
 
 .contact-details a {
-    color: #1a1463;
-    text-decoration: none;
+    color: black;
+    text-decoration: underline;
     transition: color 0.3s ease;
 }
 
 .contact-details a:hover {
-    color: whitesmoke;
+    color: #1a1463;
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    .contact-card {
+        width: calc(90% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        width: calc(100% - 20px);
+    }
+}
                                                             /* Developer Profiles Styles */
 .developers {
     text-align: center;
@@ -871,4 +916,48 @@ footer a {
 footer a:hover {
     color: #DFD9E8;
     text-decoration: underline;
+}
+                                                                    /*cookies*/
+#cookieConsent {
+    background-color: rgba(20, 20, 20, 0.8);
+    min-height: 26px;
+    font-size: 14px;
+    color: white;
+    line-height: 26px;
+    padding: 8px 0 8px 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+
+#cookieConsent a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+#cookieConsent a:hover {
+    text-decoration: underline;
+}
+
+#closeCookieConsent {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: 10px 10px;
+    font-weight: bold;
+    font-size: 300%;
+}
+
+#acceptCookie {
+    background-color: #ffc107;
+    color: black;
+    border: 0;
+    padding: 10px 10px;
+    margin-left: 10px;
+    cursor: pointer;
 }
