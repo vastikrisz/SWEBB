@@ -206,8 +206,7 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
+    background-image:url("hacker.webp");}
 
 .header-content {
     position: relative;
@@ -222,8 +221,8 @@ h3 {
 .header-content .text-background {
     display: inline-block;
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 5px;
+    padding: 5px;
+    border-radius: 20px;
     text-align: center;
 }
 

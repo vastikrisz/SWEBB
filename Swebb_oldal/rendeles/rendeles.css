@@ -427,8 +427,8 @@ h4 {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fff;
     padding: 20px;
+    background-image: url("rendeles_hatter.png");
     box-sizing: border-box;
 }
 
