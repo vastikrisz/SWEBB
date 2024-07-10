@@ -170,7 +170,15 @@ h4 {
     margin-bottom: 20px;
     color: #527191;
 }
-
+.pricing-card h2,
+.pricing-card h3,
+.pricing-card h4,
+.pricing-card ul,
+.pricing-card ul li,
+.pricing-card button {
+    position: relative;
+    z-index: 2; /* Ensure the text and button are above the pseudo-elements */
+}
 .pricing-card h2{
     color: black;
 }
@@ -228,6 +236,41 @@ h4 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: whitesmoke;
 }
+   .pricing-card.highlight {
+       border: 3px solid black;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+       position: relative;
+       overflow: hidden;
+   }
+  .pricing-card.highlight::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background-image: linear-gradient(180deg, transparent 25%, rgb(0, 183, 255), rgb(255, 48, 255), transparent 75%);
+      animation: rotBGimg 6s linear infinite;
+      transition: all 0.2s linear;
+      z-index: 0; /* Ensure the pseudo-element is below the card content */
+  }
+     @keyframes rotBGimg {
+         from {
+             transform: rotate(0deg);
+         }
+         to {
+             transform: rotate(360deg);
+         }
+     }
+
+   .pricing-card.highlight::after {
+       content: '';
+       position: absolute;
+       background: whitesmoke;
+       inset: 5px;
+       border-radius: 10px;
+       z-index: 0; /* Ensure the pseudo-element is below the card content */
+   }  /* Specific styles for the highlight card with animation */
 
 @media (max-width: 768px) {
     .pricing-options {
