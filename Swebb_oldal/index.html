@@ -30,7 +30,7 @@
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <ul>
             <li><a href="#services">Szolgáltatásaink</a></li>
-            <li><a href="#portfolio">Példáink</a></li>
+            <li><a href="#portfolio">Portfólió</a></li>
             <li><a href="#pricing">Áraink</a></li>
             <li><a href="#contact">Kapcsolat</a></li>
             <li><a href="#developers">Csapatunk</a></li>
@@ -38,29 +38,28 @@
         </ul>
     </nav>
 
-    <header class="hero-header" id="hero-header">
-        <picture>
-            <!-- High-resolution image for large screens -->
-            <source srcset="nagyfelbontas_kezdokep.png" media="(min-width: 1200px)">
-            <!-- Medium-resolution image for medium screens -->
-            <source srcset="kozepesfelbontasu_kezdokep.png" media="(min-width: 768px)">
-            <!-- Low-resolution image for small screens -->
-            <source srcset="kisfelbontasu_kezdokep.png" media="(max-width: 767px)">
-            <!-- Default image as a fallback -->
-            <img src="nagyfelbontas_kezdokep.pngs" alt="Description of the hero image">
-        </picture>
-        <div class="overlay"></div>
-        <div class="header-content">
-            <div class="text-background">
-                <img id="swebblogo" src="pictures/SWEBB-logo-nobg.png" alt="SWEBB">
-                <h2>Személyre szabott weboldalak kisvállalkozásoknak - Profi megoldások, elérhető áron!</h2>
-                <p>Egyedi weboldalakat készítünk, hogy vállalkozásod kitűnjön a tömegből. Teljes körű szolgáltatásokat kínálunk: a weboldal tervezéstől és fejlesztéstől kezdve, a csak design megoldásokig. Bízd ránk a weboldalad, és fókuszálj arra, amiben igazán jó vagy!</p>
-                <button><a href="#services">Ismerj meg minket!</a></button>
+    <header class="hero-header">
+        <div class="logo-placeholder">
+            <img src="pictures/SWEBB-logo-nobg.png" alt="Logo">
+        </div>
+        <div class="content-row">
+            <div class="content">
+                <h1>SZEMÉLYRE SZABOTT WEBOLDALAK<br>KISVÁLLALKOZÁSOKNAK</h1>
+            </div>
+            <div class="image-placeholder">
+                <img src="pictures/swebb_ascending_new.png" alt="Velünk örömteli a sikerre vezető út!">
             </div>
         </div>
-    </header>    
+        <button class="cta-button">Miket csinálunk?</button>
+        <div class="circle-1"></div>
+        <div class="curve-1"></div>
+        <div class="curve-2"></div>
+        <div class="curve-3"></div>
+    </header>
+     
 
     <div class="gradient-transition-header"></div>
+    <div class="gradient-transition-headerbelow"></div>
 
     <section id="services" class="services">
         <h2>Szolgáltatásaink</h2>
@@ -143,7 +142,33 @@
     
     <section id="pricing" class="pricing-table">
         <h2>Árlista</h2>
-        <div class="pricing-options">
+        <div class="pricing-options short">
+            <div class="pricing-card custom">
+                <h2>EGYÉNI</h2>
+                <h3>??? Ft</h3>
+                <ul>
+                    <li>Csak design?</li>
+                    <li>Oldal elkészítése</li>
+                    <li>??? oldal</li>
+                    <li>Reszponzív design</li>
+                    <li>??? év tárhely</li>
+                    <li>??? év domain név</li>
+                    <li>SSL tanúsítvány</li>
+                </ul>
+            <a href="rendeles/rendeles.html"><button>Rendeléshez</button></a>
+            </div>
+            <div class="pricing-card custom">
+                <h2>WORDPRESS</h2>
+                <h3>200.000 Ft</h3>
+                <ul>
+                    <li>WordPress telepítés</li>
+                    <li>Alap beállítások</li>
+                    <li>Reszponzív design</li>
+                </ul>
+                <a href="rendeles/rendeles.html"><button>Rendeléshez</button></a>
+            </div>
+        </div>
+        <div class="pricing-options long">
             <div class="pricing-card">
                 <h2>ALAP</h2>
                 <h3>140.000 Ft</h3>
@@ -198,25 +223,6 @@
                     <li class="tooltip">Marketing szövegek<span class="tooltiptext">Az oldaladhoz tartozó marketing szövegeket teljes mértékben ránk tudod bízni, amennyiben igényt tartasz rá. Megírunk mindent, figyelve a mai marketing normákra.</span><span class="info-icon">ℹ️</span></li>
                     <li class="tooltip">Bejelentkeztetés<span class="tooltiptext">Nagyobb oldalaknál előfordul, hogy szeretne az ember felhasználói fiókokat alkalmazni. Az ehhez tartozó háttér munkákat nyugodtan ránk bízhatod, megírjuk az adatbázist és az egész regisztráció / bejelentkezés folyamatot.</span><span class="info-icon">ℹ️</span></li>
                     <li class="tooltip">Facebook hirdetés<span class="tooltiptext">Facebook hirdetések nagyot dobhatnak egy weboldal látogatottságán. Az ár tartalmazza egy adott ideig a hirdetés költségeit. Rendeléskor részletesebb tájékoztatást olvashatsz arról, hogyan számoljuk a költségeket.</span><span class="info-icon">ℹ️</span></li>
-                </ul>
-                <a href="rendeles/rendeles.html"><button>Rendeléshez</button></a>
-            </div>
-            <div class="pricing-card custom">
-                <h2>EGYÉNI</h2>
-                <h3>??? Ft</h3>
-                <ul>
-                    <li>Csak design?</li>
-                    <li>Oldal elkészítése</li>
-                    <li>??? oldal</li>
-                    <li>Reszponzív design</li>
-                    <li>??? év tárhely</li>
-                    <li>??? év domain név</li>
-                    <li>SSL tanúsítvány</li>
-                    <li>SEO?</li>
-                    <li>Webanalitika?</li>
-                    <li>Marketing szövegek?</li>
-                    <li>Bejelentkeztetés?</li>
-                    <li>Facebook hirdetés?</li>
                 </ul>
                 <a href="rendeles/rendeles.html"><button>Rendeléshez</button></a>
             </div>
@@ -275,6 +281,7 @@
         <p>Telefon: <a href="tel:+36309448238">+36309448238</a>
             E-mail: <a href="mailto:swebblap1@gmail.com">swebblap1@gmail.com</a>
         </p>
+        <a href="SWEBB Adatkezelési és Cookie Tájékoztató.pdf" download="swebb_adatkezelesi_tajekoztato.pdf">Adatkezelési Tájékoztató</a>
     </footer>
 
     <div id="cookieConsent">

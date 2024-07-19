@@ -29,7 +29,29 @@ h4 {
     font-size: 1.2em;
     margin: 10px 0;
 }
-/* Navbar Styles */
+
+/* Enhanced Gradients with More Stops */
+.gradient-transition-headerbelow {
+    background: linear-gradient(to bottom, #A1C4FD,  #8572AA);
+    height: 80px; /* Adjust height as needed */
+}
+
+.gradient-transition-headerbelow2 {
+    background: linear-gradient(to bottom, #8572AA 0%, #6A5FA6 25%, #50489C 50%, #372C91 75%, #211A68 100%);
+    height: 80px; /* Adjust height as needed */
+}
+
+.gradient-transition-light {
+    background: linear-gradient(to bottom, #211A68 0%, #372C91 25%, #50489C 50%, #6A5FA6 75%, #8572AA 100%);
+    height: 80px; /* Adjust height as needed */
+}
+
+.gradient-transition-footer {
+    background: linear-gradient(to bottom, #8572AA 0%, #6A5FA6 25%, #50489C 50%, #372C91 75%, #000 100%);
+    height: 80px; /* Adjust height as needed */
+}
+
+                                                                /* Navbar Styles */
 #menu-toggle {
     display: none;
 }
@@ -143,11 +165,13 @@ h4 {
 .steps-section {
     text-align: center;
     padding: 20px 20px;
+    background: linear-gradient(to bottom left, #C2E9FB, #A1C4FD, #A1C4FD);
 }
 
 .steps-section h2 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    margin-top: 2em;
 }
 
 .steps-section h3 {
@@ -207,6 +231,12 @@ h4 {
     font-size: 1.2em;
 }
 
+@media (min-width: 800px) and (max-width: 1200px) {
+    .step-card {
+        width: calc(30% - 40px);
+    }
+}
+
 /* Media query for small screens (e.g., tablets) */
 @media (max-width: 768px) {
     .step-card {
@@ -224,7 +254,7 @@ h4 {
 .pricing-table {
     text-align: center;
     padding: 20px 20px;
-    background-color: #527191;
+    background-color: #211A68;
 }
 
 .pricing-table h2 {
@@ -421,25 +451,30 @@ h4 {
 .tooltip:hover .info-icon {
     color: #000;
 }
-
+                                                                    /*Form*/
 #form-section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    background-image: url("rendeles_hatter.png");
+    background-color: #8572AA;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
 .form-container {
     text-align: center;
     width: 100%;
     max-width: 900px;
+    position: relative;
+    z-index: 1;
 }
 
 .form-container h2 {
     margin-bottom: 20px;
+    color: white;
 }
 
 iframe {
@@ -447,6 +482,93 @@ iframe {
     width: 100%;
      
     height: 800px;
+}
+/* Styles for random shapes */
+#form-section::before,
+#form-section::after,
+#form-section .shape-1,
+#form-section .shape-2,
+#form-section .shape-3,
+#form-section .shape-4,
+#form-section .shape-5,
+#form-section .shape-6 {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0; /* Ensures shapes are behind the content */
+    border-radius: 50%; /* Default shape is a circle */
+}
+
+/* Specific shapes and positions */
+#form-section::before {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    left: 10%;
+}
+
+#form-section::after {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    right: 15%;
+}
+
+#form-section .shape-1 {
+    width: 120px;
+    height: 120px;
+    top: 70%;
+    left: 5%;
+}
+
+#form-section .shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 80%;
+    left: 35%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0; /* Square shape */
+    background: none;
+}
+
+#form-section .shape-3 {
+    width: 200px;
+    height: 100px;
+    top: 60%;
+    right: 20%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-radius: 50%;
+}
+
+#form-section .shape-4 {
+    width: 150px;
+    height: 50px;
+    bottom: 10%;
+    right: 10%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+#form-section .shape-5 {
+    width: 60px;
+    height: 60px;
+    top: 15%;
+    right: 25%;
+    border-radius: 0; /* Small square */
+}
+
+#form-section .shape-6 {
+    width: 100px;
+    height: 100px;
+    bottom: 15%;
+    left: 20%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5); /* Different transparency */
 }
 
                                                                 /*Footer*/

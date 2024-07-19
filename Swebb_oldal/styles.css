@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 html {
     scroll-behavior: smooth;
 }
@@ -44,7 +45,11 @@ h3 {
     height: 80px; /* Adjust height as needed */
 }
 .gradient-transition-header {
-    background: linear-gradient(to bottom, #000, #8572AA); /* Gradient from dark to light */
+    background: linear-gradient(to bottom left, #C2E9FB, #A1C4FD, #A1C4FD); /* Gradient from dark to light */
+    height: 80px; /* Adjust height as needed */
+}
+.gradient-transition-headerbelow {
+    background: linear-gradient(to bottom, #A1C4FD, #8572AA); /* Gradient from dark to light */
     height: 80px; /* Adjust height as needed */
 }
 
@@ -172,138 +177,391 @@ h3 {
 }
 
                                                                 /* Header Section */
-.hero-header {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-}
-
-.hero-header picture {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.hero-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#swebblogo{
-    width: 85%;
-}
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:url("hacker.webp");}
-
-.header-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: whitesmoke;
-    max-width: 800px;
-    padding: 20px;
+.hero-header,
+.hero-header * {
     box-sizing: border-box;
 }
 
-.header-content .text-background {
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 5px;
-    border-radius: 20px;
+.hero-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #FFFBFB, #A1C4FD, #C2E9FB);
+    height: 100vh;
+    width: 100%;
+    color: white;
+    padding: 20px;
     text-align: center;
+    position: relative; /* For positioning shapes */
+    z-index: 1;
 }
 
-.header-content h1 {
-    font-size: 4em;
+.logo-placeholder {
+    margin-bottom: 50px;
+    z-index: 2;
+}
+
+.logo-placeholder img {
+    max-width: 500px; /* Increased size for the logo */
+    height: auto;
+}
+
+.content-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
     margin-bottom: 20px;
+    gap: 100px;
 }
 
-.header-content h2 {
-    font-size: 2em;
+.content {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    z-index: 3;
+}
+
+.content h1 {
+    font-size: 3em;
+    line-height: 1.3;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
+    font-weight: 700;
+    
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.header-content p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    line-height: 1.5;
+.image-placeholder {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 4;
 }
 
-.header-content button {
-    background-color: #8572AA;
-    color: black;
-    border: none;
+.image-placeholder img {
+    max-width: 70%; /* Decreased size for the image */
+    max-height: 70%;
+    border-radius: 30%;
+}
+
+.cta-button {
+    background-color: #1B1464;
+    color: white;
     padding: 15px 30px;
     font-size: 1em;
-    border-radius: 5px;
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.header-content button a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    height: 100%;
-    width: 100%;
+.cta-button:hover {
+    background-color: #662E91;
 }
 
-.header-content button:hover {
-    background-color: #211A68;
-    color: white;
+/* Decorative shapes */
+.hero-header::before,
+.hero-header::after,
+.hero-header .circle-1,
+.hero-header .circle-2,
+.hero-header .curve-1,
+.hero-header .curve-2,
+.hero-header .curve-3 {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0;
 }
 
-/* Responsive Header */
-@media (max-width: 768px) {
-    .header-content h1 {
-        font-size: 3em;
+/* Circle shape */
+.hero-header::before {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 30%;
+    left: 10%;
+}
+
+/* Larger circle shape */
+.hero-header::after {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    bottom: 20%;
+    right: 15%;
+}
+
+/* Additional circle shape */
+.hero-header .circle-1 {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: 45%;
+    left: 45%;
+}
+
+/* Curved line shapes */
+.hero-header .curve-1 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 25%;
+    background: none;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(45deg);
+}
+
+.hero-header .curve-2 {
+    width: 200px;
+    height: 100px;
+    top: 20%;
+    right: 10%;
+    background: none;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-radius: 50%;
+}
+
+.hero-header .curve-3 {
+    width: 150px;
+    height: 50px;
+    bottom: 15%;
+    left: 15%;
+    background: none;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 1000px) {
+    .content-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0; /* Adjust gap as needed */
     }
-    .header-content h2 {
+
+    .image-placeholder {
+        order: 2; /* Ensure the image comes after the text */
+        margin-top: -30px;
+    }
+
+    .content {
+        order: 1; /* Ensure the text comes before the image */
+    }
+    .cta-button{
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .content-row {
+        flex-direction: column;
+    align-items: center;
+    }
+
+    .content, .image-placeholder {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 2em;
+    }
+
+    .logo-placeholder {
+        margin-top: 30px; /* Add space above the logo */
+    }
+
+    .hero-header::before {
+        top: 20%; /* Adjust circle position */
+        left: 10%; /* Adjust circle position */
+    }
+
+    .hero-header::after {
+        bottom: 10%; /* Adjust circle position */
+        right: 10%; /* Adjust circle position */
+    }
+
+    .hero-header .circle-1 {
+        top: 40%; /* Adjust additional circle position */
+        left: 50%; /* Adjust additional circle position */
+    }
+
+    .hero-header .curve-1 {
+        top: 50%; /* Adjust curve position */
+        left: 30%; /* Adjust curve position */
+    }
+
+    .hero-header .curve-2 {
+        top: 20%; /* Adjust curve position */
+        right: 20%; /* Adjust curve position */
+    }
+
+    .hero-header .curve-3 {
+        bottom: 5%; /* Adjust curve position */
+        left: 20%; /* Adjust curve position */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-header {
+        padding: 10px;
+    }
+
+    .logo-placeholder {
+        margin-top: 10em; /* Increase space above the logo */
+        margin-bottom: 0;
+    }
+
+    .logo-placeholder img {
+        max-width: 300px; /* Adjust the size as needed */
+    }
+
+    .content-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .image-placeholder{
+        padding-top: 0;
+        margin-top: -20px;
+    }
+
+    .content, .image-placeholder {
+        
+        text-align: center;
+    }
+
+    .content h1 {
         font-size: 1.5em;
     }
-    .header-content p {
-        font-size: 1em;
+
+    .image-placeholder img {
+        max-width: 90%; /* Adjust size to fit better on small screens */
     }
-    .header-content button {
+
+    .cta-button {
         padding: 10px 20px;
         font-size: 0.9em;
     }
+
+    .hero-header::before {
+        top: 15%; /* Adjust circle position */
+        left: 5%; /* Adjust circle position */
+    }
+
+    .hero-header::after {
+        bottom: 10%; /* Adjust circle position */
+        right: 5%; /* Adjust circle position */
+    }
+
+    .hero-header .circle-1 {
+        top: 60%; /* Adjust additional circle position */
+        left: 10%; /* Adjust additional circle position */
+    }
+
+    .hero-header .curve-1 {
+        top: 70%; /* Adjust curve position */
+        left: 5%; /* Adjust curve position */
+    }
+
+    .hero-header .curve-2 {
+        top: 30%; /* Adjust curve position */
+        right: 15%; /* Adjust curve position */
+    }
+
+    .hero-header .curve-3 {
+        bottom: 5%; /* Adjust curve position */
+        left: 5%; /* Adjust curve position */
+    }
 }
 
-@media (max-width: 375px) {
-    .header-content {
-        padding: 10px;
+@media (max-width: 385px) {
+    .cta-button{
+        display: none !important;
     }
-    .header-content .text-background {
-        padding: 15px;
+    .content-row{
+        gap: -30px;
     }
-    .header-content h1 {
-        font-size: 2.5em;
+    .image-placeholder{
+        margin-top: -50px;
     }
-    .header-content h2 {
-        font-size: 1.2em;
+    .logo-placeholder{
+        margin-top: 10em;
     }
-    .header-content p {
-        font-size: 0.9em;
+
+}
+
+/* Specific media query for Surface Duo */
+@media (max-width: 540px) and (max-height: 720px) {
+    .content-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Adjust gap as needed */
     }
-    .header-content button {
-        padding: 8px 15px;
-        font-size: 0.8em;
+
+    .logo-placeholder {
+        margin-top: 150px; /* Increase space above the logo */
+        margin-bottom: 0;
+    }
+
+    .image-placeholder img {
+        max-width: 70%; /* Adjust size to fit better */
+        max-height: 70%;
     }
 }
+
+/* Specific media query for iPad */
+@media (min-width: 768px) and (max-width: 1000px) {
+    .content-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0; /* Adjust gap as needed */
+    }
+
+    .logo-placeholder {
+        margin-top: 200px; /* Increase space above the logo */
+        margin-bottom: 0;
+    }
+
+    .image-placeholder img {
+        max-width: 75%; /* Adjust size to fit better */
+        max-height: 75%;
+        margin-top: -40px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1025px){
+    .image-placeholder img{
+        max-width: 100%;
+    }
+
+    .content-row{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .logo-placeholder{
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+}
+
 
                                                             /* Services Section */
 #services {
@@ -389,6 +647,25 @@ h3 {
     flex-wrap: wrap;
 }
 
+.pricing-options.short {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensure the cards have the same height */
+}
+
+.pricing-options.long {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
 .pricing-card {
     background: lavenderblush;
     padding: 20px;
@@ -400,6 +677,16 @@ h3 {
     color: #527191;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-card.custom {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #527191;
 }
 
 .pricing-card h2,
@@ -458,13 +745,6 @@ h3 {
     color: white;
 }
 
-.pricing-card.custom {
-    background-color: white;
-    border: 1px solid black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: whitesmoke;
-}
-
 /* Specific styles for the highlight card with animation */
 .pricing-card.highlight {
     border: 3px solid black;
@@ -504,31 +784,40 @@ h3 {
     z-index: 1; /* Ensure the pseudo-element is below the card content */
 }
 
-
-
+@media (max-width: 1024px) {
+    .pricing-options.long {
+        flex-direction: wrap;
+        flex-wrap: wrap;
+        justify-content: center; /* Ensure cards are spaced properly */
+    }
+    
+    .pricing-card {
+        width: calc(40% - 20px); /* Adjust width for medium screens */
+        margin-bottom: 20px;
+    }
+}
 
 @media (max-width: 768px) {
-    .pricing-options {
+    .pricing-options.short {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-options.long {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .pricing-card {
-        width: calc(50% - 10px);
+        width: calc(50% - 20px); /* Adjust width for smaller screens */
         margin-bottom: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .pricing-card {
-        width: 100%;
-    }
-}
-
-@media (max-width: 375px) {
-    .pricing-card {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 80%; /* Full width for small screens */
     }
 }
 
