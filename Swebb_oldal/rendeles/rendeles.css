@@ -258,28 +258,60 @@ h4 {
 }
 
 .pricing-table h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
+    font-size: 2.5em;
+    margin-bottom: 40px;
     color: whitesmoke;
 }
 
 .pricing-options {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
+.pricing-options.short {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensure the cards have the same height */
+}
+
+.pricing-options.long {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
 .pricing-card {
-    background: whitesmoke;
+    background: lavenderblush;
     padding: 20px;
     border: 1px solid black;
-    width: 200px;
+    width: 250px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-bottom: 20px;
     color: #527191;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.pricing-card.custom {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #527191;
+}
+
 .pricing-card h2,
 .pricing-card h3,
 .pricing-card h4,
@@ -289,8 +321,10 @@ h4 {
     position: relative;
     z-index: 2; /* Ensure the text and button are above the pseudo-elements */
 }
-.pricing-card h2{
+
+.pricing-card h2 {
     color: black;
+    font-size: 2em;
 }
 
 .pricing-card h3 {
@@ -320,75 +354,94 @@ h4 {
     color: #aaa;
 }
 
+.pricing-card button {
+    background-color: #8572AA;
+    color: #F4F6F6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.pricing-card button:hover {
+    background-color: #1A1463;
+    color: white;
+}
+
+/* Specific styles for the highlight card with animation */
 .pricing-card.highlight {
     border: 3px solid black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
 }
 
-.pricing-card.custom {
-    background-color: darkgrey;
-    border: 1px solid black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: whitesmoke;
+.pricing-card.highlight::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: linear-gradient(180deg, transparent 25%, rgb(0, 183, 255), rgb(255, 48, 255), transparent 75%);
+    animation: rotBGimg 6s linear infinite;
+    transition: all 0.2s linear;
+    z-index: 0; /* Ensure the pseudo-element is below the card content */
 }
-   .pricing-card.highlight {
-       border: 3px solid black;
-       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-       position: relative;
-       overflow: hidden;
-   }
-  .pricing-card.highlight::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background-image: linear-gradient(180deg, transparent 25%, rgb(0, 183, 255), rgb(255, 48, 255), transparent 75%);
-      animation: rotBGimg 6s linear infinite;
-      transition: all 0.2s linear;
-      z-index: 0; /* Ensure the pseudo-element is below the card content */
-  }
-     @keyframes rotBGimg {
-         from {
-             transform: rotate(0deg);
-         }
-         to {
-             transform: rotate(360deg);
-         }
-     }
 
-   .pricing-card.highlight::after {
-       content: '';
-       position: absolute;
-       background: whitesmoke;
-       inset: 5px;
-       border-radius: 10px;
-       z-index: 0; /* Ensure the pseudo-element is below the card content */
-   }  /* Specific styles for the highlight card with animation */
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pricing-card.highlight::after {
+    content: '';
+    position: absolute;
+    background: whitesmoke;
+    inset: 5px;
+    border-radius: 10px;
+    z-index: 1; /* Ensure the pseudo-element is below the card content */
+}
+
+@media (max-width: 1024px) {
+    .pricing-options.long {
+        flex-direction: wrap;
+        flex-wrap: wrap;
+        justify-content: center; /* Ensure cards are spaced properly */
+    }
+    
+    .pricing-card {
+        width: calc(40% - 20px); /* Adjust width for medium screens */
+        margin-bottom: 20px;
+    }
+}
 
 @media (max-width: 768px) {
-    .pricing-options {
+    .pricing-options.short {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-options.long {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .pricing-card {
-        width: calc(50% - 10px);
+        width: calc(50% - 20px); /* Adjust width for smaller screens */
         margin-bottom: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .pricing-card {
-        width: 80%;
-    }
-}
-
-@media (max-width: 375px) {
-    .pricing-card {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 80%; /* Full width for small screens */
     }
 }
 
@@ -461,7 +514,7 @@ h4 {
     background-color: #8572AA;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden;
+    
 }
 
 .form-container {
@@ -514,13 +567,6 @@ iframe {
     right: 15%;
 }
 
-#form-section .shape-1 {
-    width: 120px;
-    height: 120px;
-    top: 70%;
-    left: 5%;
-}
-
 #form-section .shape-2 {
     width: 150px;
     height: 150px;
@@ -531,28 +577,6 @@ iframe {
     background: none;
 }
 
-#form-section .shape-3 {
-    width: 200px;
-    height: 100px;
-    top: 60%;
-    right: 20%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-radius: 50%;
-}
-
-#form-section .shape-4 {
-    width: 150px;
-    height: 50px;
-    bottom: 10%;
-    right: 10%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-radius: 50%;
-    transform: rotate(45deg);
-}
 
 #form-section .shape-5 {
     width: 60px;
@@ -560,15 +584,6 @@ iframe {
     top: 15%;
     right: 25%;
     border-radius: 0; /* Small square */
-}
-
-#form-section .shape-6 {
-    width: 100px;
-    height: 100px;
-    bottom: 15%;
-    left: 20%;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5); /* Different transparency */
 }
 
                                                                 /*Footer*/

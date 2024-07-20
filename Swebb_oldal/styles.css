@@ -98,9 +98,9 @@ h3 {
 #navorder{
     color: black;
     font-weight: bold;
-    background-color: whitesmoke;
-    border: 2px solid;
-    border-radius: 50%;
+    background-color: #8572AA;
+    color: white;
+
 }
 
 .navbar ul li a:hover {
@@ -701,6 +701,7 @@ h3 {
 
 .pricing-card h2 {
     color: black;
+    font-size: 2em;
 }
 
 .pricing-card h3 {
