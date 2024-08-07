@@ -1153,6 +1153,11 @@ h3 {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.developer-intro-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .developer-intro {
