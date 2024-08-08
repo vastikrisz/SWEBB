@@ -1,3 +1,19 @@
+
+function incrementPrice(button, increment, price) {
+    // increment input number
+    let $input = $(button).parents('.number-control').find('.number-quantity');
+    let val = parseInt($input.val(), 10);
+    $input.val(val + increment);
+
+    // increment full price
+    let fullPriceField = document.getElementById("fullPriceField");
+    let existingPrice = parseInt(fullPriceField.value, 10);
+    console.log(existingPrice)
+    fullPriceField.value = existingPrice + price;
+
+}
+
+
 // Cookie functions
 function setCookie(name, value, days) {
     var expires = "";
